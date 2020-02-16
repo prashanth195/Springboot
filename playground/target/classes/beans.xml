@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+<bean id= "cvm" class = "com.springLearning.playground.core.ChocolateVendingMachine">
+<constructor-arg name="box">
+<bean id= "cb2" class = "com.springLearning.playground.core.ChocolateBox"></bean>
+
+</constructor-arg>
+<constructor-arg name="model" value="JRAM">
+</constructor-arg>
+
+
+
+<!-- <property name="box" ref = "cb"></property> -->
+<property name="model" value="KG67"></property> 
+
+</bean>
+
+<bean id= "cvm2" class = "com.springLearning.playground.core.ChocolateVendingMachine">
+<constructor-arg name="box">
+<bean id= "cb2" class = "com.springLearning.playground.core.ChocolateBox"></bean>
+</constructor-arg>
+<constructor-arg name="model" value="JRAM"></constructor-arg>
+
+
+
+</bean>
+
+<bean id= "cb" class = "com.springLearning.playground.core.ChocolateBox"></bean>
+
+
+
+</beans>
