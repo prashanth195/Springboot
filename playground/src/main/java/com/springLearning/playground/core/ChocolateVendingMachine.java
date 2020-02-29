@@ -8,9 +8,10 @@ public class ChocolateVendingMachine {
 	
 	private String model;
 	
-	public ChocolateVendingMachine() {
-		System.out.println("Created Successfully CVM");
-	}
+	/*
+	 * public ChocolateVendingMachine() {
+	 * System.out.println("Created Successfully CVM"); }
+	 */
 	
 	
 		
@@ -21,6 +22,10 @@ public class ChocolateVendingMachine {
 
 		}
 
+	
+	public void des() {
+		System.out.println("Destroyed succesfully...");
+	}
 	
 	
 
@@ -38,11 +43,12 @@ public ChocolateVendingMachine(ChocolateBox box, String model) {
 	public ChocolateBox getBox() {
 		return box;
 	}
-//
-//	public void setBox(ChocolateBox box) {
-//		this.box = box;
-//	}
-//
+
+	
+	public void setBox(ChocolateBox box) {
+		this.box = box;
+	}
+
 	public String getModel() {
 		return model;
 	}
@@ -63,6 +69,14 @@ public ChocolateVendingMachine(ChocolateBox box, String model) {
 	@Override
 	public String toString() {
 		return super.toString() + "MODEL "+ model;
+	}
+	
+	public void loadChocolates(int nos) {
+		box.loadChocolate(nos);
+	}
+	
+	public void balance() {
+		box.printBalance();
 	}
 
 }

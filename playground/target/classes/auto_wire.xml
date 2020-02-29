@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!--  simple auto wire  by name-->
+
+<!-- <bean id= "cvm" class = "com.springLearning.playground.core.ChocolateVendingMachine" autowire="byName">
+
+</bean>
+
+<bean id= "box" class = "com.springLearning.playground.core.ChocolateBox"></bean>
+ -->
+
+<!-- ########################## -->
+<!--  simple auto wire  by type-->
+
+<!-- <bean id= "cvm" class = "com.springLearning.playground.core.ChocolateVendingMachine" autowire="byType">
+
+</bean>
+
+<bean id= "boxite" class = "com.springLearning.playground.core.ChocolateBox" primary="true" ></bean>
+<bean id= "box" class = "com.springLearning.playground.core.ChocolateBox"></bean>
+-->
+
+
+<!-- ########################## -->
+<!-- <bean id= "cvm" class = "com.springLearning.playground.core.ChocolateVendingMachine" autowire="constructor" lazy-init="true" destroy-method="des" depends-on="cbf">
+<constructor-arg name="model" value="ParleCVM"></constructor-arg>
+</bean>
+
+
+<bean id= "cvm2" class = "com.springLearning.playground.core.ChocolateVendingMachine" autowire="constructor">
+<constructor-arg name="model" value="edCVM"></constructor-arg>
+<constructor-arg name="box" ref="toffyBox" ></constructor-arg>
+</bean>
+ -->
+ 
+ <bean id = "cbf" class = "com.springLearning.playground.core.CBFactory"></bean>
+ 
+ 
+<bean id= "mangobiteBox" class = "com.springLearning.playground.core.ChocolateBox" scope="prototype" init-method="init" destroy-method="des" factory-method="getInstance" factory-bean="cbf" >
+<constructor-arg name="cname" value="manogbite"></constructor-arg>
+</bean>
+
+
+
+
+</beans>
+

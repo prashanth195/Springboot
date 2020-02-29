@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="lgTv" class="org.learning.playground.LGTV" autowire="byName" init-method="init"
+		>
+	</bean>
+
+	<bean id="samsungTv" class="org.learning.playground.SamSungTV" autowire="constructor"    >
+	<constructor-arg name="screen" ref="screen"></constructor-arg>
+	
+	</bean>
+
+	
+<bean id="screen5" class="org.learning.playground.LEDScreen"  scope="prototype"  primary="true"   />
+<bean id="screen3" class="org.learning.playground.LEDScreen" />
+	<bean id="screen" class="org.learning.playground.LCDScreen" init-method="startup"  destroy-method="des"/>
+
+	<bean id="usb" class="org.learning.playground.Usb10"></bean>
+
+</beans>
